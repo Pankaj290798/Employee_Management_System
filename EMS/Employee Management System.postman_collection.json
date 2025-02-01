@@ -1,0 +1,535 @@
+{
+	"info": {
+		"_postman_id": "da970920-e269-40ff-859d-878a87e217df",
+		"name": "Employee Management System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26575256"
+	},
+	"item": [
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "saveuser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3MjgwMjE0NTIsImV4cCI6MTcyODAyMjg5Mn0.W_zd8FZ4wM2x1oZfWj87OmZ3wtkPBmBRL8kIGoO18HU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\":\"Pankaj\",\n    \"lastName\":\"Chaudhari\",\n    \"email\":\"pankaj@gmail.com\",\n    \"password\":\"Pankaj@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/auth/delete/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createViewOnlyUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3Mzg0MjEyNDksImV4cCI6MTczODQyMjY4OX0.uRhE1DhqcNB-xw6mTRjJPuLNHIzNBcs-VOB_g2kGsHc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"viem\",\r\n    \"lastName\":\"View\",\r\n    \"email\":\"viem@gmail.com\",\r\n    \"password\":\"View@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/createViewOnlyUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"createViewOnlyUser"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "city",
+					"item": [
+						{
+							"name": "save",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYW5rYWpAZ21haWwuY29tIiwiaWF0IjoxNzM4NDE4NDk4LCJleHAiOjE3Mzg0MTk5Mzh9.vU6Vc1jO5kaHblYaByFXZW3vAB6W1UXyivLFmzxLNIg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"cityName\":\"Mumbai\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/cities",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"cities"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getCityById",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYW5rYWpAZ21haWwuY29tIiwiaWF0IjoxNzM4NDE4NDk4LCJleHAiOjE3Mzg0MTk5Mzh9.vU6Vc1jO5kaHblYaByFXZW3vAB6W1UXyivLFmzxLNIg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/cities/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"cities",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteCity",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYW5rYWpAZ21haWwuY29tIiwiaWF0IjoxNzM4NDE4NDk4LCJleHAiOjE3Mzg0MTk5Mzh9.vU6Vc1jO5kaHblYaByFXZW3vAB6W1UXyivLFmzxLNIg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/cities/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"cities",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAllCities",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/cities",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"cities"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "department",
+					"item": [
+						{
+							"name": "getAllDepartment",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "save",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/departments",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"departments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getDepartmentById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/departments/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"departments",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteDepartmentById",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYW5rYWpAZ21haWwuY29tIiwiaWF0IjoxNzM4NDIwMTQwLCJleHAiOjE3Mzg0MjE1ODB9.Ea8_M_aSrUxs76ujykasBp-HlqzN6n8vRBlyz4q-77U",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/departments/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"departments",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "employee",
+					"item": [
+						{
+							"name": "saveEmployee",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"Pankaj\",\r\n  \"lastName\": \"Chaudhari\",\r\n  \"department\": {\r\n    \"id\": 1\r\n  },\r\n  \"address\": \"123 Main Street\",\r\n  \"city\": {\r\n    \"id\": 2\r\n  },\r\n  \"dateOfJoining\": \"2023-05-15\",\r\n  \"jobTitle\": \"Software Engineer\",\r\n  \"salary\": 75000,\r\n  \"mob\": \"9876543210\",\r\n  \"email\": \"pankaj.chaudhari@example.com\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAllUser",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAllEmployee",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYW5rYWpAZ21haWwuY29tIiwiaWF0IjoxNzM4NDEyOTc0LCJleHAiOjE3Mzg0MTQ0MTR9.1cYumRD7MfmRmtHzD-0BW-aqvYKSFmpGNoPc4FpZrsA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/employees",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"employees"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getEmployeeById",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "deleteEmployeeById",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2aWVtQGdtYWlsLmNvbSIsImlhdCI6MTczODQyMTMzMywiZXhwIjoxNzM4NDIyNzczfQ.FqvZVVT3ljbibsvZZ1G44EDUF5FnnEMFotWXVKUoNVQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/employees/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"employees",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateRequest",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"Pankaj\",\r\n  \"lastName\": \"Chaudhari\",\r\n  \"department\": {\r\n    \"id\": 1\r\n  },\r\n  \"address\": \"123 Main Street\",\r\n  \"city\": {\r\n    \"id\": 1\r\n  },\r\n  \"dateOfJoining\": \"2023-05-15\",\r\n  \"jobTitle\": \"Software Engineer\",\r\n  \"salary\": 75000,\r\n  \"mob\": \"9876543210\",\r\n  \"email\": \"pankaj.chaudhari@example.com\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/employees/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"employees",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getEmployeesByDepartment",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "getEmployeesByCity",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYW5rYWpAZ21haWwuY29tIiwiaWF0IjoxNzM4NDIwMTQwLCJleHAiOjE3Mzg0MjE1ODB9.Ea8_M_aSrUxs76ujykasBp-HlqzN6n8vRBlyz4q-77U",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/employees/city/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"employees",
+										"city",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "general",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n     \"email\":\"pankaj@gmail.com\",\n    \"password\":\"Pankaj@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/signIn",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"signIn"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
